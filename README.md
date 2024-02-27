@@ -1,5 +1,4 @@
 # UDP Client-Server Implementation
-
 This project implements a simple **UDP Client-Server** communication system using _C++ and Winsock_.
 
 ## Features
@@ -24,5 +23,6 @@ This project implements a simple **UDP Client-Server** communication system usin
 - **thread**, **mutex**: C++ standard library features for multithreading support.
 
 ## Notes
+- VERY heavily inspired by [this](https://www.youtube.com/watch?v=uIanSvWou1M) tutorial.
 - This implementation is intended for educational purposes and may not be suitable for production environments without further enhancements and security considerations. (I will get to it eventually.)
 - Network programming is definitely more interesting than expected...
