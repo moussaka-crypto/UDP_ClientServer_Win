@@ -1,0 +1,11 @@
+[27-02-2024_17-00-39] Client(127.0.0.1): Client connected.
+[27-02-2024_17-00-44] Server: Hey
+[27-02-2024_17-00-52] Client(127.0.0.1): Wazzup, Beijing?
+[27-02-2024_17-00-57] Server: Limitless drip.
+[27-02-2024_17-01-03] Client(127.0.0.1): Gojo's Limitless?
+[27-02-2024_17-01-20] Server: I swear to GOd, to go there is suicide.
+[27-02-2024_17-01-25] Client(127.0.0.1): For you.
+[27-02-2024_17-01-31] Client(127.0.0.1): After all
+[27-02-2024_17-01-37] Client(127.0.0.1): Scissors cuts paper.
+[27-02-2024_17-01-45] Server: upos
+[27-02-2024_17-01-50] Client(127.0.0.1): haha goteem

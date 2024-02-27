@@ -1,20 +1,4 @@
-#include <iostream>
-#include <WS2tcpip.h>
-#include <string>
-#include <thread>
-#pragma comment (lib, "ws2_32.lib")
-
-void receiveMessages(SOCKET out)
-{
-	char buffer[1024];
-	int bytesReceived = 0;
-	while (true) {
-		bytesReceived = recv(out, buffer, 1024, 0);
-		if (bytesReceived > 0) {
-			std::cout << "\t\t\t\tServer: " << buffer << "\n";
-		}
-	}
-}
+#include "client.h"
 
 void main(int argc, char* argv[]) // we can pass commands in (argument count and argument values)
 {

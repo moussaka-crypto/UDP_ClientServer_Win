@@ -1,27 +1,6 @@
-#include <iostream>
-#include <WS2tcpip.h>
-#include <string>
-#include <thread>
-#include <mutex>
-#include <fstream>
-#include <ctime>
-#include <filesystem>
-#pragma comment (lib, "ws2_32.lib")
+#include "server.h"
 
 std::mutex mtx;
-std::string get_timestamp() {
-	std::time_t now = std::time(nullptr);
-	// Convert to local time!!
-	std::tm localTime;
-	localtime_s(&localTime, &now);
-
-	// Format as a string
-	char timeStamp[20];
-	std::strftime(timeStamp, sizeof(timeStamp), "%d-%m-%Y_%H-%M-%S", &localTime);
-
-	return timeStamp;
-}
-
 void receiveMessages(SOCKET in, sockaddr_in& clientMeta, int& clientLength, std::ofstream& serverLog)
 {
 	char buff[1024];
@@ -53,6 +32,7 @@ void receiveMessages(SOCKET in, sockaddr_in& clientMeta, int& clientLength, std:
 			buff[bytesIn] = '0';
 			// convert to printable form
 			inet_ntop(AF_INET, &clientMeta.sin_addr, clientIP, 256);
+
 			// Lock the mutex before writing to the log file
 			std::lock_guard<std::mutex> lock(mtx);
 			serverLog << "[" << get_timestamp() << "] Client(" << clientIP << "): " << buff << "\n";
@@ -138,7 +118,6 @@ void main()
 	}
 
 	//Close socket and shutdown winsock
-	serverLog.close();
 	closesocket(in);
 	WSACleanup();
 }
